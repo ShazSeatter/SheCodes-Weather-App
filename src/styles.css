@@ -1,0 +1,132 @@
+body {
+  font-family: "Poiret One", cursive;
+  background-image: url(../img/cloud_sky.png);
+  background-size: cover;
+  background-position: bottom;
+}
+
+h1 {
+  padding: 5px;
+  margin: 22px 0;
+}
+
+h3 {
+  margin-bottom: 80px;
+}
+
+h4 {
+  margin: 30px 10px;
+  text-align: center;
+}
+
+a {
+  color: #394867;
+}
+
+a:hover {
+  color: #008891;
+}
+
+ul {
+  list-style: none;
+  position: relative;
+  top: -25px;
+  left: 40px;
+}
+
+li {
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+footer {
+  font-size: 10px;
+  text-align: center;
+}
+
+.search-form {
+  margin-left: 230px;
+  margin-right: 50px;
+}
+.shadow-sm {
+  border-radius: 50px; 
+}
+.btn {
+  background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+  border: none;  
+  transition: all 200ms ease;
+
+}
+.btn:hover {
+  opacity: 0.7;
+}
+
+.feels-like-temp {
+  font-size: 15px; 
+  position: relative;
+  top: -5px; 
+  font-weight: 400;
+}
+
+.description {
+  text-transform: capitalize;
+  margin-top: -11px;
+}
+.low-temp {
+  color: #7e8a97;
+}
+.weather-app {
+  border: 5px solid #ffff;
+  border-radius: 10px;
+  box-shadow: 10px 10px 8px -2px rgba(142, 141, 142, 0.3);
+  padding: 20px;
+  width: 100%;
+  margin: 50px auto;
+  max-width: 800px;
+  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+}
+
+.current-weather {
+  margin: 40px;
+  border: none;
+}
+
+.main-temperature {
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 1;
+  margin-left: 20px;
+}
+
+.fa-temperature-high,
+.fa-tint,
+.fa-wind {
+  color: #394867;
+}
+.units {
+  position: relative;
+  top: -50px;
+}
+
+.rain {
+  width: 120px;
+  margin-right: 10px;
+}
+
+.card-body {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.rain-sun,
+.cloudy {
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+}
