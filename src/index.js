@@ -55,7 +55,6 @@ form.addEventListener("submit", handleSubmit);
 // Displaying search city temperature and weather details in search bar
 function showWeather(response) {
   console.log(response); 
-
   document.querySelector("#city-input").innerHTML = response.data.name;
   document.querySelector("#main-temperature").innerHTML = Math.round(
     response.data.main.temp
