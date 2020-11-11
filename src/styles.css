@@ -81,9 +81,10 @@ footer {
 
 .description {
   text-transform: capitalize;
-  margin-top: -11px;
+  padding-top: 10px;
+  margin-bottom: 0; 
   position: relative;
-  left: 50px;
+  left: 58px;
 }
 .low-temp {
   color: #7e8a97;
