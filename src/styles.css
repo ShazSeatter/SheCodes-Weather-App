@@ -50,6 +50,18 @@ footer {
   font-size: 15px;
   text-align: center;
 }
+
+.weather-app {
+  border: 5px solid #ffff;
+  border-radius: 10px;
+  box-shadow: 10px 10px 8px -2px rgba(142, 141, 142, 0.3);
+  padding: 20px;
+  width: 100%;
+  margin: 50px auto;
+  max-width: 700px;
+  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+}
+
 .search-form {
   margin-left: 230px;
   margin-right: 50px;
@@ -88,16 +100,6 @@ footer {
 }
 .low-temp {
   color: #7e8a97;
-}
-.weather-app {
-  border: 5px solid #ffff;
-  border-radius: 10px;
-  box-shadow: 10px 10px 8px -2px rgba(142, 141, 142, 0.3);
-  padding: 20px;
-  width: 100%;
-  margin: 50px auto;
-  max-width: 700px;
-  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
 }
 
 .current-weather {
