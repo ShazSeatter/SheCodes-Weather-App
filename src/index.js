@@ -86,6 +86,8 @@ function locate(event) {
 function displayCelsius(event) {
   event.preventDefault();
   document.querySelector("#main-temperature").innerHTML = Math.round(celsiusTemperature); 
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active"); 
 }
 
 function displayFahrenheit(event) {
@@ -93,6 +95,8 @@ function displayFahrenheit(event) {
   document.querySelector("#main-temperature").innerHTML = Math.round(
     (celsiusTemperature * 9) / 5 + 32
   );
+  celsiusLink.classList.remove("active"); 
+  fahrenheitLink.classList.add("active"); 
 }
 
 
@@ -101,11 +105,11 @@ form.addEventListener("submit", handleSubmit);
 
 let celsiusTemperature = null; 
 
-let celsiusClick = document.querySelector("#celsius-link");
-celsiusClick.addEventListener("click", displayCelsius);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
 
-let fahrenheitClick = document.querySelector("#fahrenheit-link");
-fahrenheitClick.addEventListener("click", displayFahrenheit);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", locate);
