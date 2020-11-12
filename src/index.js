@@ -45,8 +45,6 @@ function handleSubmit(event) {
   searchCity(city); 
 }
 
-let form = document.querySelector("#search-bar");
-form.addEventListener("submit", handleSubmit);
 
 // Displaying search city temperature and weather details in search bar
 function showWeather(response) {
@@ -56,8 +54,9 @@ function showWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description); 
   document.querySelector("#current-date-time").innerHTML = formatDate(response.data.dt * 1000); 
   document.querySelector("#city-input").innerHTML = response.data.name;
+  celsiusTemperature = response.data.main.temp; 
   document.querySelector("#main-temperature").innerHTML = Math.round(
-    response.data.main.temp
+    celsiusTemperature
   );
   document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
   let temperature = response.data.main.feels_like;
@@ -82,26 +81,33 @@ function locate(event) {
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
 
-let locationButton = document.querySelector("#location-button");
-locationButton.addEventListener("click", locate);
 
 // Conversion of celsius and fahrenheit
-function celsius(event) {
+function displayCelsius(event) {
   event.preventDefault();
-  let temperatureCelsius = document.querySelector("#main-temperature");
-  let celsius = temperatureCelsius.innerHTML;
-  temperatureCelsius.innerHTML = Math.round(((celsius - 32) * 5) / 9);
+  document.querySelector("#main-temperature").innerHTML = Math.round(celsiusTemperature); 
 }
-let celsiusClick = document.querySelector("#celsius-link");
-celsiusClick.addEventListener("click", celsius);
 
-function converttoFahrenheit(event) {
+function displayFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#main-temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  document.querySelector("#main-temperature").innerHTML = Math.round(
+    (celsiusTemperature * 9) / 5 + 32
+  );
 }
+
+
+let form = document.querySelector("#search-bar");
+form.addEventListener("submit", handleSubmit);
+
+let celsiusTemperature = null; 
+
+let celsiusClick = document.querySelector("#celsius-link");
+celsiusClick.addEventListener("click", displayCelsius);
+
 let fahrenheitClick = document.querySelector("#fahrenheit-link");
-fahrenheitClick.addEventListener("click", converttoFahrenheit);
+fahrenheitClick.addEventListener("click", displayFahrenheit);
+
+let locationButton = document.querySelector("#location-button");
+locationButton.addEventListener("click", locate);
 
 searchCity("Aberdeen"); 
