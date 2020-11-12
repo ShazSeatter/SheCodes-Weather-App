@@ -1,17 +1,15 @@
 //location date & time
-let now = new Date();
+function formatDate(timestamp) {
+let now = new Date(timestamp);
 let date = now.getDate();
 let hours = now.toLocaleString("en-US", {
   hour: "numeric",
   minute: "numeric",
   hour12: true,
 });
-
 let year = now.getFullYear();
-
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let day = days[now.getDay()];
-
 let months = [
   "Jan",
   "Feb",
@@ -28,10 +26,8 @@ let months = [
 ];
 
 let month = months[now.getMonth()];
-
-let dateElement = document.querySelector("#current-date-time");
-dateElement.innerHTML = `${month} ${date}, ${day} ${hours}`;
-
+return `${month} ${date}, ${day} ${hours}`;
+}
 
 //displaying city name in HTML 
 function searchCity(city) {
@@ -54,6 +50,7 @@ form.addEventListener("submit", handleSubmit);
 
 // Displaying search city temperature and weather details in search bar
 function showWeather(response) {
+  document.querySelector("#current-date-time").innerHTML = formatDate(response.data.dt * 1000); 
   document.querySelector("#city-input").innerHTML = response.data.name;
   document.querySelector("#main-temperature").innerHTML = Math.round(
     response.data.main.temp
