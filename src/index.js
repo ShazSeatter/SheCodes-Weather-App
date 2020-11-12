@@ -51,6 +51,9 @@ form.addEventListener("submit", handleSubmit);
 // Displaying search city temperature and weather details in search bar
 function showWeather(response) {
   console.log(response.data); 
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description); 
   document.querySelector("#current-date-time").innerHTML = formatDate(response.data.dt * 1000); 
   document.querySelector("#city-input").innerHTML = response.data.name;
   document.querySelector("#main-temperature").innerHTML = Math.round(
