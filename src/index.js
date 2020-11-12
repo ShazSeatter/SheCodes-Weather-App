@@ -5,7 +5,7 @@ let date = now.getDate();
 let hours = now.toLocaleString("en-US", {
   hour: "numeric",
   minute: "numeric",
-  hour12: true,
+  hour12: false,
 });
 let year = now.getFullYear();
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
