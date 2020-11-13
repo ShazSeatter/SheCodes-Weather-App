@@ -53,7 +53,6 @@ function handleSubmit(event) {
 
 // Displaying search city temperature and weather details in search bar
 function showWeather(response) {
-  console.log(response.data);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -61,8 +60,8 @@ function showWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   document.querySelector("#current-date-time").innerHTML = formatDate(
-    response.data.dt * 1000
-  );
+    response.data.dt * 1000 + (response.data.timezone * 1000
+  ));
   document.querySelector("#city-input").innerHTML = response.data.name;
   celsiusTemperature = response.data.main.temp;
   document.querySelector("#main-temperature").innerHTML = Math.round(
