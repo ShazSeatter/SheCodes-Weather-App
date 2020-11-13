@@ -20,7 +20,7 @@ function formatDate(timestamp) {
   ];
 
   let month = months[now.getMonth()];
-  return `${month} ${date}, ${day} ${formatHours(timestamp)}`;
+  return `${month} ${date}, ${day} </br> <span class="last-updated">Last updated at:</span> ${formatHours(timestamp)}`;
 }
 
 function formatHours(timestamp) {

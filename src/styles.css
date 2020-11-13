@@ -88,6 +88,9 @@ footer {
   font-size: 14px; 
 }
 
+.last-updated {
+  font-size: 20px; 
+}
 .description {
   text-transform: capitalize;
   margin-bottom: 0; 
