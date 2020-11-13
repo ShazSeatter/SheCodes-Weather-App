@@ -33,9 +33,11 @@ return `${month} ${date}, ${day} ${hours}`;
 function searchCity(city) {
   let apiKey = "f902315c1bb8b7c1ac10cb7eaa68c265";
   let units = "metric";
-  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=${units}`;
   axios.get(apiUrl).then(showWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&&units=${units}`;
+  axios.get(apiUrl).then(displayForecast); 
 }
 
 //Search engine bar
@@ -69,6 +71,11 @@ function showWeather(response) {
   );
 }
 
+function displayForecast(response) {
+console.log(response.data); 
+
+
+}
 function showCurrentPosition(position) {
   let units = "metric";
   let apiKey = "f902315c1bb8b7c1ac10cb7eaa68c265";
