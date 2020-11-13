@@ -95,8 +95,10 @@ footer {
   text-transform: capitalize;
   margin-bottom: 0; 
   position: relative;
-  left: 58px;
+  left: 73px;
+  top: -20px;
 }
+
 .low-temp {
   color: #7e8a97;
 }
