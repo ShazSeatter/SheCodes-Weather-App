@@ -99,11 +99,13 @@ function displayForecast(response) {
             forecast.weather[0].icon
           }@2x.png" class="card-img-top" alt="">
               <div class="card-body">
+              <div class="shadow">
           <p class="card-text"> <strong>${Math.round(
             forecast.main.temp_max
           )}°</strong> | <span class="low-temp"><strong>${Math.round(
       forecast.main.temp_min
     )}°</strong></span></p>
+        </div>
         </div>
       </div>
     </div>
