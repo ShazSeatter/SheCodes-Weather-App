@@ -27,9 +27,7 @@ h4 {
 }
 
 h5 {
-text-align: center; 
-position: relative;
-left: 7px;
+text-align: center;
 }
 
 ul {
@@ -134,17 +132,25 @@ a:hover {
 
 .fa-temperature-high,
 .fa-tint,
-.fa-wind {
+.fa-wind,
+.fa-umbrella {
   color: #394867;
 }
+
+.precipitation {
+  list-style: none; 
+  font-size: 13px; 
+  text-align: center;
+}
+
+.fa-umbrella {
+  font-size: 16px; 
+}
+
+
 .units {
   position: relative;
   top: -50px;
-}
-
-.rain {
-  width: 120px;
-  margin-right: 10px;
 }
 
 .col, .card-text {
@@ -153,11 +159,4 @@ a:hover {
 
 .card-body {
   padding: 0; 
-}
-
-.rain-sun,
-.cloudy {
-  width: 50px;
-  display: block;
-  margin: 0 auto;
 }

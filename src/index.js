@@ -53,6 +53,7 @@ function handleSubmit(event) {
 
 // Displaying search city temperature and weather details in search bar
 function showWeather(response) {
+  console.log(response.data); 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -84,16 +85,21 @@ function showWeather(response) {
 
 // Hourly forecast
 function displayForecast(response) {
+  console.log(response.data.list[0].pop);
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null; 
   let forecast = null; 
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
+    precipitation = response.data.list[index].pop * 100;
+
     forecastElement.innerHTML += `
     <div class="col-2">
-      <h5> ${formatHours(forecast.dt * 1000)} </h5> 
-        <div class="card" style="width: 100px;">
+      <h5> ${formatHours(
+        forecast.dt * 1000 + (response.data.city.timezone * 1000
+      ))} </h5> 
+        <div class="card">
           <img src="http://openweathermap.org/img/wn/${
             forecast.weather[0].icon
           }@2x.png" class="card-img-top" alt="">
@@ -107,6 +113,7 @@ function displayForecast(response) {
         </div>
         </div>
       </div>
+      <li class="precipitation"><i class="fas fa-umbrella"></i> ${Math.round(precipitation)}%</li> 
     </div>
   `;
   }
