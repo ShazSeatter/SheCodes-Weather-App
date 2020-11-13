@@ -25,6 +25,12 @@ h4 {
   text-align: center;
 }
 
+h5 {
+text-align: center; 
+position: relative;
+left: 7px;
+}
+
 ul {
   list-style: none;
   position: relative;
@@ -136,18 +142,16 @@ a:hover {
   margin-right: 10px;
 }
 
-.card-body {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .col {
   text-align: center; 
 }
 
 .card-text {
   text-align: center;
+}
+
+.card-body {
+  padding: 0; 
 }
 
 .rain-sun,
