@@ -21,7 +21,8 @@ h3 {
 }
 
 h4 {
-  margin: 30px 10px;
+  margin-bottom: 20px;
+  padding-top: 50px;
   text-align: center;
 }
 
@@ -47,6 +48,7 @@ li {
 footer {
   font-size: 15px;
   text-align: center;
+  padding-top: 30px;
 }
 
 .weather-app {
@@ -145,12 +147,8 @@ a:hover {
   margin-right: 10px;
 }
 
-.col {
+.col, .card-text {
   text-align: center; 
-}
-
-.card-text {
-  text-align: center;
 }
 
 .card-body {
