@@ -85,7 +85,6 @@ function showWeather(response) {
 
 // Hourly forecast
 function displayForecast(response) {
-  console.log(response.data.list[0].pop);
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null; 
   let forecast = null; 
@@ -122,9 +121,11 @@ function displayForecast(response) {
 function showCurrentPosition(position) {
   let units = "metric";
   let apiKey = "f902315c1bb8b7c1ac10cb7eaa68c265";
-  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiUrl = `${apiEndpoint}?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function locate(event) {
